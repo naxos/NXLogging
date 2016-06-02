@@ -62,7 +62,7 @@ License
 
 NXLogging is licensed under the _Simplified BSD License_:
 
-Copyright (c) 2016, Naxos Software Solutions GmbH
+Copyright (c) 2016, Naxos Software Solutions GmbH.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
