@@ -1,4 +1,0 @@
-Documentation set was installed to Xcode!
-
-Path: /Users/masc/Library/Developer/Shared/Documentation/DocSets/com.naxos-software.NXLogging.docset
-Time: 2016-06-02 07:32:38 +0000
