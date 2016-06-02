@@ -55,7 +55,7 @@ In principle you can stop reading here, and just start using the NXLogging frame
 - [Customisation](Documentation/Customisation.md) - Customised log output
 - [Extensions](Documentation/Extensions.md) - Extending the framework
 
-We hope, you will enjoy NXLogging and wish you happy coding! If you have any questions, don't hesitate to contact us at <info@naxos-software.com>.
+We hope, you will enjoy NXLogging and wish you happy coding!
 
 License
 =======
