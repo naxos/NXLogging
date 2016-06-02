@@ -28,6 +28,8 @@
 		452887CD1C9321E200865E7B /* NXTextColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 452887CB1C9321E200865E7B /* NXTextColor.m */; };
 		452887D51C96AF7500865E7B /* NXFileLogTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 452887D31C96AF7500865E7B /* NXFileLogTarget.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		452887D61C96AF7500865E7B /* NXFileLogTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 452887D41C96AF7500865E7B /* NXFileLogTarget.m */; };
+		452A288C1D0000EF004456E5 /* LICENSE.md in Sources */ = {isa = PBXBuildFile; fileRef = 452A288A1D0000EF004456E5 /* LICENSE.md */; };
+		452A288D1D0000EF004456E5 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 452A288B1D0000EF004456E5 /* README.md */; };
 		454E33A91C779AC300152439 /* NXLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 454E33A81C779AC300152439 /* NXLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		454E33C91C779C8D00152439 /* NXLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 454E33C01C779C8D00152439 /* NXLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		454E33CA1C779C8D00152439 /* NXLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 454E33C11C779C8D00152439 /* NXLogger.m */; };
@@ -81,6 +83,8 @@
 		452A28821CFFFF8C004456E5 /* 03-Architecture-template.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "03-Architecture-template.markdown"; sourceTree = "<group>"; };
 		452A28831CFFFF8C004456E5 /* 04-Customisation-template.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "04-Customisation-template.markdown"; sourceTree = "<group>"; };
 		452A28841CFFFF8C004456E5 /* 05-Extensions-template.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "05-Extensions-template.markdown"; sourceTree = "<group>"; };
+		452A288A1D0000EF004456E5 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		452A288B1D0000EF004456E5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		454E33A51C779AC300152439 /* NXLogging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NXLogging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		454E33A81C779AC300152439 /* NXLogging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NXLogging.h; sourceTree = "<group>"; };
 		454E33AA1C779AC300152439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 		454E339B1C779AC300152439 = {
 			isa = PBXGroup;
 			children = (
+				452A288A1D0000EF004456E5 /* LICENSE.md */,
+				452A288B1D0000EF004456E5 /* README.md */,
 				454E33A71C779AC300152439 /* NXLogging */,
 				454E33A61C779AC300152439 /* Products */,
 			);
@@ -362,8 +368,10 @@
 				458003E31C8C8E37000641C8 /* NXJSONLogFormatter.m in Sources */,
 				45F037D71C78F18900EF6FB8 /* NSError+NXLogging.m in Sources */,
 				45D862311C78C22A00DC4C7E /* NXSystemLogFormatter.m in Sources */,
+				452A288C1D0000EF004456E5 /* LICENSE.md in Sources */,
 				4516230A1C8B156B0078446C /* NXLogger.swift in Sources */,
 				45F038401C7B28A000EF6FB8 /* NXBasicLogFormatter.m in Sources */,
+				452A288D1D0000EF004456E5 /* README.md in Sources */,
 				45D862241C78B7ED00DC4C7E /* NXSystemLogTarget.m in Sources */,
 				454E33CA1C779C8D00152439 /* NXLogger.m in Sources */,
 				452887D61C96AF7500865E7B /* NXFileLogTarget.m in Sources */,
