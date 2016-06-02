@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="docs/DocTemplates/05-Extensions.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/doc/05-Extensions</TokenIdentifier>
+			<Abstract type="html">Extensions
+==========</Abstract>
+			<DeclaredIn>05-Extensions-template.markdown</DeclaredIn>
+            
+			
+			<NodeRef refid="5"/>
+		</Token>
+		
+		
+        
+        
+	</File>
+</Tokens>

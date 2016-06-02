@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/NXLogClientInfo.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/NXLogClientInfo</TokenIdentifier>
+			<Abstract type="html">Information about the log client.</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+            
+			
+			<NodeRef refid="12"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogClientInfo/setFunction:</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s function name</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *function</Declaration>
+			
+			
+			<Anchor>//api/name/function</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogClientInfo/function</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s function name</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *function</Declaration>
+			
+			
+			<Anchor>//api/name/function</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NXLogClientInfo/function</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s function name</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *function</Declaration>
+			
+			
+			<Anchor>//api/name/function</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogClientInfo/setFile:</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s file path</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *file</Declaration>
+			
+			
+			<Anchor>//api/name/file</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogClientInfo/file</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s file path</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *file</Declaration>
+			
+			
+			<Anchor>//api/name/file</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NXLogClientInfo/file</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s file path</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *file</Declaration>
+			
+			
+			<Anchor>//api/name/file</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogClientInfo/setLine:</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s line number</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSNumber *line</Declaration>
+			
+			
+			<Anchor>//api/name/line</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogClientInfo/line</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s line number</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSNumber *line</Declaration>
+			
+			
+			<Anchor>//api/name/line</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NXLogClientInfo/line</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s line number</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSNumber *line</Declaration>
+			
+			
+			<Anchor>//api/name/line</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogClientInfo/setModule:</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s module</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *module</Declaration>
+			
+			
+			<Anchor>//api/name/module</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogClientInfo/module</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s module</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *module</Declaration>
+			
+			
+			<Anchor>//api/name/module</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NXLogClientInfo/module</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s module</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *module</Declaration>
+			
+			
+			<Anchor>//api/name/module</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogClientInfo/setProcessName:</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s process name</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *processName</Declaration>
+			
+			
+			<Anchor>//api/name/processName</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogClientInfo/processName</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s process name</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *processName</Declaration>
+			
+			
+			<Anchor>//api/name/processName</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NXLogClientInfo/processName</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s process name</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *processName</Declaration>
+			
+			
+			<Anchor>//api/name/processName</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogClientInfo/setProcessID:</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s process ID</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSNumber *processID</Declaration>
+			
+			
+			<Anchor>//api/name/processID</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogClientInfo/processID</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s process ID</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSNumber *processID</Declaration>
+			
+			
+			<Anchor>//api/name/processID</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NXLogClientInfo/processID</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s process ID</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSNumber *processID</Declaration>
+			
+			
+			<Anchor>//api/name/processID</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogClientInfo/setDate:</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s date</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSDate *date</Declaration>
+			
+			
+			<Anchor>//api/name/date</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogClientInfo/date</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s date</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSDate *date</Declaration>
+			
+			
+			<Anchor>//api/name/date</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NXLogClientInfo/date</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s date</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSDate *date</Declaration>
+			
+			
+			<Anchor>//api/name/date</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogClientInfo/setDeviceName:</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s device</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *deviceName</Declaration>
+			
+			
+			<Anchor>//api/name/deviceName</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogClientInfo/deviceName</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s device</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *deviceName</Declaration>
+			
+			
+			<Anchor>//api/name/deviceName</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NXLogClientInfo/deviceName</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s device</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *deviceName</Declaration>
+			
+			
+			<Anchor>//api/name/deviceName</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogClientInfo/setDeviceModel:</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s device model</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *deviceModel</Declaration>
+			
+			
+			<Anchor>//api/name/deviceModel</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogClientInfo/deviceModel</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s device model</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *deviceModel</Declaration>
+			
+			
+			<Anchor>//api/name/deviceModel</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NXLogClientInfo/deviceModel</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s device model</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *deviceModel</Declaration>
+			
+			
+			<Anchor>//api/name/deviceModel</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogClientInfo/setSystemName:</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s operating system</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *systemName</Declaration>
+			
+			
+			<Anchor>//api/name/systemName</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogClientInfo/systemName</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s operating system</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *systemName</Declaration>
+			
+			
+			<Anchor>//api/name/systemName</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NXLogClientInfo/systemName</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s operating system</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *systemName</Declaration>
+			
+			
+			<Anchor>//api/name/systemName</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogClientInfo/setSystemVersion:</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s operating system version</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *systemVersion</Declaration>
+			
+			
+			<Anchor>//api/name/systemVersion</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogClientInfo/systemVersion</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s operating system version</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *systemVersion</Declaration>
+			
+			
+			<Anchor>//api/name/systemVersion</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NXLogClientInfo/systemVersion</TokenIdentifier>
+			<Abstract type="html">The log caller&apos;s operating system version</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *systemVersion</Declaration>
+			
+			
+			<Anchor>//api/name/systemVersion</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogClientInfo/initWithSourceCodeInfo:</TokenIdentifier>
+			<Abstract type="html">Create the log info from some basic info.</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithSourceCodeInfo:(NSDictionary *)info</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>info</Name>
+					<Abstract type="html">Some basic info on the log client. Normally NXLOGINFO would be passed,
+or to be precise, a dictionary with the keys @(NXLogInfoFile), @(NXLogInfoFunction),
+and @(NXLogInfoLine) and their corresponding values.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithSourceCodeInfo:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogClientInfo/stringByReplacingVariablesInString:</TokenIdentifier>
+			<Abstract type="html">Replaces all variables in a string with their values
+Variables are formed $(variable) where variable is one of this class&apos; property names</Abstract>
+			<DeclaredIn>NXLogClientInfo.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)stringByReplacingVariablesInString:(NSString *)string</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>string</Name>
+					<Abstract type="html">The string to search</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The resulting string</Abstract></ReturnValue>
+			<Anchor>//api/name/stringByReplacingVariablesInString:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

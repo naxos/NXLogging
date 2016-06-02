@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>04-Customisation Document</title>
+
+	<link rel="stylesheet" href="../../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../../index.html">NXLogging </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../../index.html">Naxos Software Solutions GmbH</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../../index.html">Home</a></li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview-contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">04-Customisation Document</h1>
+
+					<h1>Customisation</h1>
+
+<p>It might be a good idea to read <a href="02-Advance_Logging.html">Advanced Logging</a> before continuing here. For a general overview of the concepts of NXLogging, read <a href="03-Architecture.html">Architecture</a>.</p>
+
+<p>Unless you manually created a <em><a href="../../Classes/NXLogger.html">NXLogger</a></em> instance, any of the standard loggers use the shared instances of <em><a href="../../Classes/NXSystemLogTarget.html">NXSystemLogTarget</a></em> and <em><a href="../../Classes/NXConsoleLogTarget.html">NXConsoleLogTarget</a></em> for log output, which themselves employ the shared instances of <em><a href="../../Classes/NXSystemLogFormatter.html">NXSystemLogFormatter</a></em> and <em><a href="../../Classes/NXDebugLogFormatter.html">NXDebugLogFormatter</a></em> respectively.</p>
+
+<p>The following examples will show the configuration of these shared instances of log targets and log formatters, but of course the configuration can as well be applied to any other compatible log target or formatter.</p>
+
+<p>This chapter tells you all about</p>
+
+<ul>
+<li><a href="#log_level_threshold">Setting the log level threshold</a></li>
+<li><a href="#log_information">Configuring log information</a></li>
+<li><a href="#managing_log_targets">Managing log targets</a></li>
+<li><a href="#logging_to_files">Logging to files</a></li>
+<li><a href="#managing_log_formatters">Managing log formatters</a></li>
+<li><a href="#logging_in_colors">Logging in colors</a></li>
+</ul>
+
+
+<p><a name="log_level_threshold"></a></p>
+
+<h2>Log level threshold</h2>
+
+<p>You change the log level threshold of any log target with the <em>maxLogLevel</em> property. To e.g. change the log level threshold for the shared NXConsoleLogTarget to Warning, you would write in Objective C:</p>
+
+<pre><code>[NXConsoleLogTarget sharedInstance].maxLogLevel = NXLogLevelWarning;
+</code></pre>
+
+<p>and in Swift:</p>
+
+<pre><code>NXConsoleLogTarget.sharedInstance().maxLogLevel = .Warning
+</code></pre>
+
+<p>As an effect, log messages with the log levels Debug, Info and Notice will <strong>not</strong> be logged to this target.</p>
+
+<p>If you want to silence a log target completely, assign <strong>None</strong> (<em>NXLogLevelNone</em> in Objective C, <em>NXLogLevel.None</em> in Swift). If, however, you want any log message to be logged to the target, you can assign <strong>Any</strong> (<em>NXLogLevelAny</em> in Objective C, <em>NXLogLevel.Any</em> in Swift).</p>
+
+<p><a name="log_information"></a></p>
+
+<h2>Log Information</h2>
+
+<p>Removing (or adding) information to the log is a task of the <strong>log formatter</strong>. All standard log formatters which come with NXLogging are sub classes of <a href="../../Classes/NXBasicLogFormatter.html">NXBasicLogFormatter</a> and inherit its property <code>NXLogInfo hiddenInfo</code>. This property is a bit mask representing the information that you wish <strong>not</strong> to be displayed in the log. The <em>NXLogInfo</em> enum is defined in the public header file <em>NXLogTypes.h</em>, where you will also find additional documentation. In Objective C, <em>NXLogInfo</em> is presented as a bitmask, in Swift as an <em>OptionSetType</em>.</p>
+
+<p>If, e.g. you want all available information on your debug console (note, that this will lead to very long lines), you can achieve this in Objective C with:</p>
+
+<pre><code>[NXDebugLogFormatter sharedInstance].hiddenInfo = NXLogInfoNone;
+</code></pre>
+
+<p>and in Swift:</p>
+
+<pre><code>NXDebugLogFormatter.sharedInstance().hiddenInfo = .None
+</code></pre>
+
+<p>In the highly unlikely case, that you wish to log empty lines, you can assign <em>NXLogLevelAll</em> to the <em>hiddenInfo</em> property. More likely however is, that you will use the value <em>All</em> to hide everything <strong>but</strong> certain info. Let&rsquo;s say, e.g. that you want to hide everything but the <em>Date</em>, the log <em>Level</em>, and the actual <em>Content</em> (which is messages, errors and exceptions); then you would write in Objective C:</p>
+
+<pre><code>NXLogInfo visibleInfo = NXLogInfoDate | NXLogInfoLevel | NXLogInfoContent;
+[NXDebugLogFormatter sharedInstance].hiddenInfo = NXLogInfoAll ^ visibleInfo;
+</code></pre>
+
+<p>and in Swift:</p>
+
+<pre><code>let visibleInfo : NXLogInfo = [ .Date, .Level, .Content ]
+NXDebugLogFormatter.sharedInstance().hiddenInfo = NXLogInfo.All.exclusiveOr(visibleInfo)
+</code></pre>
+
+<p>Note, that in Objective C, you could also assign the <em>bitwise complement</em> <code style="font-size:11px">~visibleInfo</code> instead of the <em>exclusive or</em> <code style="font-size:11px">NXLogInfoAll ^ visibleInfo</code>.</p>
+
+<p><a name="managing_log_targets"></a></p>
+
+<h2>Managing log targets</h2>
+
+<p>Instead of silencing a log target by setting its <em>maxLogLevel</em> property to <em>None</em> (see above), you can also remove it from the logger. Let&rsquo;s assume, you want to remove the console log target (<em><a href="../../Classes/NXConsoleLogTarget.html">NXConsoleLogTarget</a></em>) from the standard logger (<em>applicationLogger</em>). In Objective C you would code:</p>
+
+<pre><code>[[NXLogger applicationLogger] removeLogTarget:[NXConsoleLogTarget sharedInstance]];
+</code></pre>
+
+<p>and in Swift:</p>
+
+<pre><code>NXLogger.applicationLogger().removeLogTarget(NXConsoleLogTarget.sharedInstance());
+</code></pre>
+
+<p>Of course, it&rsquo;s just as simple to add a log target. Just use <em>addLogTarget</em> instead of <em>removeLogTarget</em>. See also <em>Logging to files</em>.</p>
+
+<p><a name="logging_to_files"/></p>
+
+<h2>Logging to files</h2>
+
+<p>To log to a file, simply add a <em><a href="../../Classes/NXFileLogTarget.html">NXFileLogTarget</a></em> to an existing logger, or create a new logger with such a target. In Objective C:</p>
+
+<pre><code>NXFileLogTarget *fileLogTarget = [NXFileLogTarget sharedInstance];
+
+fileLogTarget.maxAge = 24 * 60 * 60;
+fileLogTarget.maxSize = 1024 * 1024;
+fileLogTarget.maxNumberOfFiles = 10;
+
+[[NXLogger applicationLogger] addLogTarget:fileLogTarget];
+</code></pre>
+
+<p>and in Swift:</p>
+
+<pre><code>let fileLogTarget = NXFileLogTarget.sharedInstance()
+
+fileLogTarget.maxAge = 24 * 60 * 60
+fileLogTarget.maxSize = 1024 * 1024
+fileLogTarget.maxNumberOfFiles = 10
+
+NXLogger.applicationLogger().addLogTarget(fileLogTarget)
+</code></pre>
+
+<p>The <em>sharedInstance</em> of the <em><a href="../../Classes/NXFileLogTarget.html">NXFileLogTarget</a></em> will log to the documents directory into a file with the same names as your application and the extension <em>log</em>. If you want to change the file, the target is logging to, use the <em>filePath</em> property. Note, that data protection (encryption) is <strong>not</strong> turned on for the log file. With the above configuration, the log file will be rolled over after a day or after it reaches a size of 1 MB, while a maximum of ten log files will be kept (the current log file plus nine historic files). A value of 0 (the default value) for <em>maxAge</em>, <em>maxSize</em>, and <em>maxNumberOfFiles</em> means unlimited file age, size and number respectively. When a log file is being rolled over, the log target will add a minus sign, followed by a timestamp to the old file&rsquo;s name and keep the extension <em>log</em>. Please note, that the <em>sharedInstance</em> of the <em><a href="../../Classes/NXFileLogTarget.html">NXFileLogTarget</a></em> uses the <em>sharedInstance</em> of the <em><a href="../../Classes/NXDebugLogFormatter.html">NXDebugLogFormatter</a></em> for formatting log output.</p>
+
+<p><strong>Warning</strong>: You can <strong>not</strong> use several log target instances with the same file (<em>filePath</em> property). You may however, use one log target instance in several loggers.</p>
+
+<p><a name="managing_log_formatters"></a></p>
+
+<h2>Managing log formatters</h2>
+
+<p>You can replace a log formatter simply by assigning it to the <em>logFormatter</em> property of a log target. This is how you format your log to JSON in Objective C:</p>
+
+<pre><code>NXJSONLogFormatter *jsonLogFormatter = [NXJSONLogFormatter sharedInstance];
+
+jsonLogFormatter.prettyPrint = YES;
+
+[NXConsoleLogTarget sharedInstance].logFormatter = jsonLogFormatter;
+</code></pre>
+
+<p>and in Swift:</p>
+
+<pre><code>let jsonLogFormatter = NXJSONLogFormatter.sharedInstance()
+
+jsonLogFormatter.prettyPrint = true
+
+NXConsoleLogTarget.sharedInstance().logFormatter = jsonLogFormatter
+</code></pre>
+
+<p><a name="logging_in_colors"></a></p>
+
+<h2>Logging in colors</h2>
+
+<p>You can log to your Xcode debug console in colors. Since Xcode doesn&rsquo;t support colors in the console natively, we need the help of a Plug-in. Install <a href="https://github.com/robbiehanson/XcodeColors">XcodeColors</a>. It&rsquo;s simple: Just pull it from GitHub, build the XcodeColors target, and restart Xcode. You can then enable a colorful log output in Objective C like this:</p>
+
+<pre><code>[NXConsoleLogTarget sharedInstance].colorsEnabled = YES;
+</code></pre>
+
+<p>and in Swift:</p>
+
+<pre><code>NXConsoleLogTarget.sharedInstance().colorsEnabled = true
+</code></pre>
+
+<p>You can also adjust the color used for every log level individually. To set the color for messages at level <em>Notice</em> to magenta, write the following in Objective C:</p>
+
+<pre><code>NXTextColor *magenta = [NXTextColor colorWithRed:255 green:0 blue:255];
+
+[[NXConsoleLogTarget sharedInstance] setColor:magenta forLoglevel:NXLogLevelNotice];
+</code></pre>
+
+<p>and in Swift:</p>
+
+<pre><code>let magenta = NXTextColor(red: 255, green: 0, blue: 255)
+
+NXConsoleLogTarget.sharedInstance().setColor(magenta, forLoglevel: .Notice)
+</code></pre>
+
+					<footer>
+						<div class="footer-copyright">
+							
+							<p class="copyright">Copyright &copy; 2016 Naxos Software Solutions GmbH. All rights reserved. Updated: 2016-06-02</p>
+							
+							
+							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+							
+						</div>
+					</footer>
+				</main>
+			</div>
+		</div>
+	</article>
+
+	<script src="../../js/script.js"></script>
+</body>
+</html>

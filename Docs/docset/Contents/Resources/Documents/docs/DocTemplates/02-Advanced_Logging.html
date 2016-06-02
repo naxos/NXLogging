@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>02-Advanced_Logging Document</title>
+
+	<link rel="stylesheet" href="../../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../../index.html">NXLogging </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../../index.html">Naxos Software Solutions GmbH</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../../index.html">Home</a></li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview-contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">02-Advanced_Logging Document</h1>
+
+					<h1>Advanced Logging</h1>
+
+<p>This chapter will tell you about</p>
+
+<ul>
+<li><a href="#log_levels">Using different log levels</a></li>
+<li><a href="#logging_errors">Logging errors</a></li>
+<li><a href="#logging_exceptions">Logging exceptions</a></li>
+<li><a href="#log_variables">Using variables in your log messages</a></li>
+</ul>
+
+
+<p><a name="log_levels"></a></p>
+
+<h2>Log Levels</h2>
+
+<p>NXLogging supports the eight log levels first introduced with syslog back in the 1980s. The Apple System Log (ASL) uses the same:</p>
+
+<ul>
+<li>Debug</li>
+<li>Info</li>
+<li>Notice</li>
+<li>Warning</li>
+<li>Error</li>
+<li>Critical</li>
+<li>Alert</li>
+<li>Emergency</li>
+</ul>
+
+
+<p>In your code you will use these log levels with the prefix <em>NXLogLevel</em>. In Objective C you could write</p>
+
+<pre><code>NXLogLevel level = NXLogLevelWarning;
+</code></pre>
+
+<p>and in Swift</p>
+
+<pre><code>let level: NXLogLevel = NXLogLevel.Warning // or for short: .Warning
+</code></pre>
+
+<p>On a side note: In our documentation &mdash;and partially in the API&mdash; we will use the terms <em>log level</em> and <em>severity</em>, which refer to the same concept but counter-directional: <em>Debug</em> is the <strong>highest log level</strong> (most detailled) but has the <strong>lowest severity</strong> (least impact). Therefore, if you configure a log target&rsquo;s <strong>maximum log level</strong> to <em>Error</em>, it will log only log messages with a <strong>level up to</strong> <em>Error</em> (<em>Error</em>, <em>Critical</em>, <em>Alert</em> and <em>Emergency</em>). For adjusting the maximum log level, refer to <a href="04-Customisation.html">Customisation</a>.</p>
+
+<p>The log levels are defined in the public header file <em>NXLogTypes.h</em>. You will also find some additional documentation there.</p>
+
+<p>You can use the log levels to your liking but know, that some backends might filter log messages according to their severity. The Apple System Log, e.g. by default only accepts messages with a severity of <em>Notice</em> or higher.</p>
+
+<p>The standard log configured in NXLogging logs to the <em>console</em> (usually the Xcode debug console) and to the <em>system</em> (ASL, usually what you see accessing the system) log. The maximum log level for the <em>console</em> is preconfigured to <em>Debug</em> and for the <em>system</em> to <em>Notice</em> (the latter coinsides with the default setting of ASL).</p>
+
+<p><a name="logging_errors"></a></p>
+
+<h2>Logging errors</h2>
+
+<p>Here is an example on error handling and logging in Objective C:</p>
+
+<pre><code>NSString *path = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"txt"];
+NSError *error = nil;
+NSString *content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&amp;error];
+
+if(error) {
+    NXLogError(NXLogLevelError, error, @"Unable to read file %@", path.lastPathComponent);
+} else {
+    NXLog(NXLogLevelDebug, @"Got content:'%@' from file %@", content, path.lastPathComponent);
+}
+</code></pre>
+
+<p>and here in Swift:</p>
+
+<pre><code>let path : NSString! = NSBundle.mainBundle().pathForResource("test", ofType: "txt")
+
+do {
+    let content = try NSString(contentsOfFile: path as String, encoding: NSUTF8StringEncoding)
+    NXLogger.log(.Debug, format: "Got content '%@' from file %@", content, path.lastPathComponent)
+} catch {
+    NXLogger.log(.Error, error: error, format: "Unable to read file %@", path.lastPathComponent)
+}
+</code></pre>
+
+<p>Appart from the obviously different error handling in the two languages, the logging is pretty much the same. If the encoding file in the examples is not UTF-8, you&rsquo;ll get a log message like this:</p>
+
+<pre style="font-size: 11px">2016-03-12 16:37:43 &lt;Error&gt;: com.naxos-software.NXLoggingSample logSomething()(LogClientSwift.swift:92) - Unable to read file test.txt
+   Error: The operation couldn’t be completed. (NSCocoaErrorDomain, error 261)
+</pre>
+
+
+<p>Here&rsquo;s another Swift example. Assume the implementation of a vending machine (adopted from Apple&rsquo;s <a href="https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ErrorHandling.html">error handling guide</a>):</p>
+
+<pre><code>enum VendingMachineError: ErrorType {
+    case InvalidSelection
+    case InsufficientFunds(coinsNeeded: Int, coinsInserted: Int)
+    case OutOfStock
+}
+
+func buyBeer(coins: Int) throws {
+    if (coins &lt; 5) {
+        throw VendingMachineError.InsufficientFunds(coinsNeeded: 5, coinsInserted: coins)
+    } else {
+        ejectBeer();
+    }
+}
+</code></pre>
+
+<p>As a caller, you can simply log an error like this:</p>
+
+<pre><code>do {
+    try buyBeer(3)
+} catch {
+    NXLogger.log(error: error)
+}
+</code></pre>
+
+<p>In Swift, you can omit the log level for the log method and leave it to the logger to find a suitable one. Here it will use <em>NXLogLevel.Error</em>, because an <em>ErrorType</em> was logged. Also note the details of the error message, which you get in the second line of the log output even though the error was just an enum value:</p>
+
+<pre style="font-size: 11px">2016-03-12 16:37:43 &lt;Error&gt;: com.naxos-software.NXLoggingSample swiftSpecificExamples()(LogClientSwift.swift:130)
+   Error: InsufficientFunds(5, 3) (NXLoggingSample.VendingMachineError, error 1)
+</pre>
+
+
+<p>You can also handle the error in a slightly more elaborate way and add some information to the log by using the <em>NSError</em> extension of NXLogging:</p>
+
+<pre><code>do {
+    try buyBeer(3)
+} catch VendingMachineError.InsufficientFunds(let p) {
+    NXLogger.log(error: NSError(VendingMachineError.InsufficientFunds(p),
+        reason: "\(p.coinsInserted) coins inserted but \(p.coinsNeeded) coins are needed",
+        suggestion: "Insert \(p.coinsNeeded - p.coinsInserted) more coins"))
+} catch let error as VendingMachineError {
+    NXLogger.log(error: NSError(error, suggestion: "Try banging the machine"))
+} catch {
+    NXLogger.log(error: error)
+}
+</code></pre>
+
+<p>The result will look something like this:</p>
+
+<pre style="font-size: 11px">2016-03-12 16:37:43 &lt;Error&gt;: com.naxos-software.NXLoggingSample swiftSpecificExamples()(LogClientSwift.swift:145)
+   Error: InsufficientFunds(5, 3) (NXLoggingSample.VendingMachineError, error 1)
+      Reason: 3 coins inserted but 5 coins are needed
+      Suggestion: Insert 2 more coins
+</pre>
+
+
+<p>Especially in Objective C, where you are stuck with <em>NSError</em>, NXLogging&rsquo;s extension makes it more convenient creating <em>NSError</em> instances:</p>
+
+<pre><code>NSError *err = [NSError errorWithCode: -2
+                          description: @"Unable to complete this operation"
+                               reason: @"The request timed out"
+                           suggestion: @"Try again later"
+                      underlyingError: [NSError errorWithCode: -1 description: @"Time-out error"]];
+</code></pre>
+
+<p>In most cases you don&rsquo;t have to deal with the <em>userInfo</em> dictionary and if omitted, <em>NSError</em> will use an error domain derived from the bundle identifier of your application. Logging the error above will result in log output similar to the one below (note how underlying errors are included recursively):</p>
+
+<pre style="font-size: 11px">2016-03-12 16:37:43 &lt;Error&gt;: com.naxos-software.NXLoggingSample [LogClientObjC logSomething](LogClientObjC.m:33)
+   Error: Unable to complete this operation (NXLoggingSampleErrorDomain, error -2)
+      Reason: The request timed out
+      Suggestion: Try again later
+   Caused by: Time-out error (NXLoggingSampleErrorDomain, error -1)
+</pre>
+
+
+<p><a name="logging_exceptions"></a></p>
+
+<h2>Logging exceptions</h2>
+
+<p>We don&rsquo;t want to encourage you to raise and catch exceptions all over your Objective-C or (even worse) Swift code. In rare cases however, exception handling might be necessary. NXLogging comes with an extension to the <em>NSException</em> class, which allows for <strong>nested exceptions</strong> by adding the property <strong>cause</strong>. It also adds a static method <strong>probe</strong>, which is particular useful in Swift, because Swift does not come with a standard way to catch a raised <em>NSException</em>.</p>
+
+<p>In Objective C you can create and raise and catch exceptions like this:</p>
+
+<pre><code>- (void)badGuy {
+    [NSException raise:@"BadGuyException" format:@"Trouble is my middle name"];
+}
+
+- (void)handleBadGuy {
+    NSException *exception = [NSException probe:^{ [self badGuy]; }];
+
+    [NSException raise:@"TooBadException" cause:exception format:@"Can't handle the %@", @"bad guy"];
+}
+</code></pre>
+
+<p>And the equivalent in Swift:</p>
+
+<pre><code>func badGuy() {
+    NSException.raise("BadGuyException", format: "Trouble is my middle name")
+}
+
+func handleBadGuy() {
+    let exception = NSException.probe(badGuy)
+
+    NSException.raise("TooBadException", cause: exception, format: "Can't handle the %@", "bad guy")
+}
+</code></pre>
+
+<p>Now, if you log an exception in Objective C:</p>
+
+<pre><code>NSException *exception = [NSException probe:^{ [self handleBadGuy]; }]; // We could also do @try @catch here
+
+NXLogException(NXLogLevelNotice, exception, @"Something sinister is going on");
+</code></pre>
+
+<p>or in Swift:</p>
+
+<pre><code>let exception = NSException.probe(handleBadGuy)
+
+NXLogger.log(.Notice, exception: exception, format: "Something sinister is going on")
+</code></pre>
+
+<p>you&rsquo;ll end up with log like this:</p>
+
+<pre style="font-size: 11px">2016-03-12 16:37:43 &lt;Notice&gt;: com.naxos-software.NXLoggingSample logSomething()(LogClientSwift.swift:90) - Something sinister is going on
+   Exception: Can't handle the bad guy (TooBadException)
+   Caused by: Trouble is my middle name (BadGuyException)
+      &gt;&gt; Log with severity Error or higher to enable call stack symbols &lt;&lt;
+</pre>
+
+
+<p>As the last line of the log output states, logging an exception with the severity <em>Error</em> or above, will cause the logger to include the <strong>call stack symbols</strong> in the log. You can configure this threshold on the log target (see <a href="04-Customisation.html">Customisation</a>).</p>
+
+<p><a name="log_variables"></a></p>
+
+<h2>Log variables</h2>
+
+<p>Let us assume, that you don&rsquo;t want every line in your logs to include a lot of information on the client&rsquo;s environment, which sometimes might be advisable for a production system (see <a href="04-Customisation.html">Customisation</a> on how to achieve this). Let us also assume, that for some particular log messages you <em>do</em> want to include some info. In such a case, you can make use of <strong>log variables</strong>:</p>
+
+<pre><code>NXLogger.log(.Warning, format: "This feature is not available in $(systemName) $(systemVersion).")
+
+NXLogger.log(.Error, format: "Sorry, this device ($(deviceModel)) does not make coffee.")
+
+// You can also put variables in the format arguments ...
+NXLogger.log(.Info, format: "Application %@ started on %@ with process ID %@.", "$(processName)", "$(deviceName)", "$(processID)")
+
+// ... or even mix it like this
+NXLogger.log(.Emergency, format: "HELP WANTED: Can some Swift expert fix function $(%@) in file $(%@)?", "function", "file")
+</code></pre>
+
+<p>The variables currently supported are:</p>
+
+<ul>
+<li>file</li>
+<li>function</li>
+<li>line</li>
+<li>module</li>
+<li>date</li>
+<li>processName</li>
+<li>processID</li>
+<li>deviceName</li>
+<li>deviceModel</li>
+<li>systemName</li>
+<li>systemVersion</li>
+</ul>
+
+
+<p>Logging with the statements above, will result in log lines like this:</p>
+
+<pre style="font-size: 11px">2016-03-12 16:37:43 &lt;Warning&gt;: This feature is not available in iPhone OS 9.2.
+2016-03-12 16:37:43 &lt;Error&gt;: Sorry, this device (x86_64) does not make coffee.
+2016-03-12 16:37:43 &lt;Info&gt;: Application NXLoggingSample started on iPhone Simulator with process ID 63132.
+2016-03-12 16:37:43 &lt;Emergency&gt;: HELP WANTED: Can some Swift expert fix function logSomething() in file LogClientSwift.swift?
+</pre>
+
+
+					<footer>
+						<div class="footer-copyright">
+							
+							<p class="copyright">Copyright &copy; 2016 Naxos Software Solutions GmbH. All rights reserved. Updated: 2016-06-02</p>
+							
+							
+							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+							
+						</div>
+					</footer>
+				</main>
+			</div>
+		</div>
+	</article>
+
+	<script src="../../js/script.js"></script>
+</body>
+</html>

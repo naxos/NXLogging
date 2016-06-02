@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/NXLogRegistry.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/NXLogRegistry</TokenIdentifier>
+			<Abstract type="html">A singelton for registration of loggers.
+Every logger created with the static initializers of the NXLogger
+class will be looked-up or registered with this registry.
+You don&apos;t really need to use this class directly, unless you
+create a logger with its non-static initializer and want to
+reuse it at a later time.</Abstract>
+			<DeclaredIn>NXLogRegistry.h</DeclaredIn>
+            
+			
+			<NodeRef refid="13"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NXLogRegistry/sharedInstance</TokenIdentifier>
+			<Abstract type="html">Get the instance of this singleton.</Abstract>
+			<DeclaredIn>NXLogRegistry.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)sharedInstance</Declaration>
+			
+			<ReturnValue><Abstract type="html">The instance</Abstract></ReturnValue>
+			<Anchor>//api/name/sharedInstance</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogRegistry/loggerNamed:</TokenIdentifier>
+			<Abstract type="html">Retrieve a logger registered under the given name</Abstract>
+			<DeclaredIn>NXLogRegistry.h</DeclaredIn>
+			
+			<Declaration>- (NXLogger *)loggerNamed:(NSString *)name</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">(input) The name of the logger</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The logger or nil if no logger with the given name was registered</Abstract></ReturnValue>
+			<Anchor>//api/name/loggerNamed:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXLogRegistry/registerLogger:</TokenIdentifier>
+			<Abstract type="html">Register a logger for later usage. The logger will be registered under
+its name property. A logger registered under the same name will be
+overwritten</Abstract>
+			<DeclaredIn>NXLogRegistry.h</DeclaredIn>
+			
+			<Declaration>- (void)registerLogger:(NXLogger *)logger</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>logger</Name>
+					<Abstract type="html">(input) The logger to register</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/registerLogger:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

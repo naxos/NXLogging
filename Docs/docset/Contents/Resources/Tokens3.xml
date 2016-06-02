@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="docs/DocTemplates/03-Architecture.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/doc/03-Architecture</TokenIdentifier>
+			<Abstract type="html">Architecture
+============</Abstract>
+			<DeclaredIn>03-Architecture-template.markdown</DeclaredIn>
+            
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+        
+        
+	</File>
+</Tokens>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/NXLogTarget.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/NXLogTarget</TokenIdentifier>
+			<Abstract type="html">The protocol describing a log target.
+Custom log target classes must conform to this protocol.</Abstract>
+			<DeclaredIn>NXLogTarget.h</DeclaredIn>
+            
+			
+			<NodeRef refid="20"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NXLogTarget/setMaxLogLevel:</TokenIdentifier>
+			<Abstract type="html">The maximum level of log messages that will be logged</Abstract>
+			<DeclaredIn>NXLogTarget.h</DeclaredIn>
+			
+			<Declaration>@property (atomic) NXLogLevel maxLogLevel</Declaration>
+			
+			
+			<Anchor>//api/name/maxLogLevel</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NXLogTarget/maxLogLevel</TokenIdentifier>
+			<Abstract type="html">The maximum level of log messages that will be logged</Abstract>
+			<DeclaredIn>NXLogTarget.h</DeclaredIn>
+			
+			<Declaration>@property (atomic) NXLogLevel maxLogLevel</Declaration>
+			
+			
+			<Anchor>//api/name/maxLogLevel</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/NXLogTarget/maxLogLevel</TokenIdentifier>
+			<Abstract type="html">The maximum level of log messages that will be logged</Abstract>
+			<DeclaredIn>NXLogTarget.h</DeclaredIn>
+			
+			<Declaration>@property (atomic) NXLogLevel maxLogLevel</Declaration>
+			
+			
+			<Anchor>//api/name/maxLogLevel</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NXLogTarget/setLogFormatter:</TokenIdentifier>
+			<Abstract type="html">The identifier of the formatter for the log messages</Abstract>
+			<DeclaredIn>NXLogTarget.h</DeclaredIn>
+			
+			<Declaration>@property (atomic) id&lt;NXLogFormatter&gt; logFormatter</Declaration>
+			
+			
+			<Anchor>//api/name/logFormatter</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NXLogTarget/logFormatter</TokenIdentifier>
+			<Abstract type="html">The identifier of the formatter for the log messages</Abstract>
+			<DeclaredIn>NXLogTarget.h</DeclaredIn>
+			
+			<Declaration>@property (atomic) id&lt;NXLogFormatter&gt; logFormatter</Declaration>
+			
+			
+			<Anchor>//api/name/logFormatter</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/NXLogTarget/logFormatter</TokenIdentifier>
+			<Abstract type="html">The identifier of the formatter for the log messages</Abstract>
+			<DeclaredIn>NXLogTarget.h</DeclaredIn>
+			
+			<Declaration>@property (atomic) id&lt;NXLogFormatter&gt; logFormatter</Declaration>
+			
+			
+			<Anchor>//api/name/logFormatter</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NXLogTarget/log:message:</TokenIdentifier>
+			<Abstract type="html">Log a message with a log level.</Abstract>
+			<DeclaredIn>NXLogTarget.h</DeclaredIn>
+			
+			<Declaration>- (void)log:(NXLogLevel)level message:(id)message</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>level</Name>
+					<Abstract type="html">(input) The log level</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">(input) The log message</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/log:message:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>05-Extensions Document</title>
+
+	<link rel="stylesheet" href="../../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../../index.html">NXLogging </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../../index.html">Naxos Software Solutions GmbH</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../../index.html">Home</a></li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview-contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">05-Extensions Document</h1>
+
+					<h1>Extensions</h1>
+
+<h2>Creating a new log target</h2>
+
+<p>The most interesting part in extending your logging is probably creating a new log target class. Let us assume, you would like to log to an UITextView in your application, with different colors for each log level.</p>
+
+<p>Since the console log target <em><a href="../../Classes/NXConsoleLogTarget.html">NXConsoleLogTarget</a></em> already supports colors, we create a subclass: <em>TextViewLogTarget</em>.</p>
+
+<p>Objective C: TextViewLogTarget.h</p>
+
+<pre><code>@import UIKit;
+@import NXLogging;
+
+@interface TextViewLogTarget : NXConsoleLogTarget
+
+- (instancetype)initWithTextView:(UITextView *)textView;
+
+@end
+</code></pre>
+
+<p>and the implementation TextViewLogTarget.m</p>
+
+<pre><code>#import "TextViewLogTarget.h"
+
+@implementation TextViewLogTarget {
+    UITextView *_textView;
+}
+
+- (instancetype)initWithTextView:(UITextView *)textView {
+    NXBasicLogFormatter *formatter = [NXBasicLogFormatter sharedInstance];
+
+    self = [super initWithFormatter:formatter];
+    if (self) {
+        _textView = textView;
+        self.colorsEnabled = YES;
+        formatter.hiddenInfo = ~(NXLogInfoSourceCode | NXLogInfoLevel | NXLogInfoContent);
+    }
+    return self;
+}
+
+- (void)log:(NXLogLevel)level message:(id)message {
+    NSString *msg = [NSString stringWithFormat:@"%@", message];
+    UIColor *color = [UIColor blackColor];
+
+    msg = [msg stringByReplacingOccurrencesOfString:@"\n" withString:@"\n   "];
+    msg = [msg stringByAppendingString:@"\n\n"];
+
+    if (self.colorsEnabled) {
+        NXTextColor *c = [self colorForLogLevel:level];
+        color = [UIColor colorWithRed:c.red green:c.green blue:c.blue alpha:1.f];
+    }
+
+    // Modify the UI on the main thread.
+    // This will happen sequentially, so we don't need to worry about thread-safety when accessing the textView property.
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSMutableAttributedString *text = [_textView.attributedText mutableCopy];
+        NSDictionary *attr = @{ NSForegroundColorAttributeName : color };
+
+        [text appendAttributedString:[[NSAttributedString alloc] initWithString:msg attributes:attr]];
+
+        [_textView setAttributedText:text];
+    });
+}
+
+@end
+</code></pre>
+
+<p>Now we need a view controller. LogViewController.h</p>
+
+<pre><code>@import UIKit;
+
+@interface LogViewController : UIViewController
+
+/// The text view outlet
+@property (nonatomic, weak) IBOutlet UITextView *textView;
+
+@end
+</code></pre>
+
+<p>and LogViewController.m</p>
+
+<pre><code>#import "LogViewController.h"
+#import "TextViewLogTarget.h"
+
+@import NXLogging;
+
+@implementation LogViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    [[NXLogger applicationLogger] addLogTarget:[[TextViewLogTarget alloc] initWithTextView:self.textView]];
+}
+
+@end
+</code></pre>
+
+<p>That&rsquo;s it. Assign the <em>LogViewController</em> class to a view controller in interface builder and link the <em>textView</em> property to an <em>UITextView</em>.</p>
+
+<p>Now in Swift. TextViewLogTarget.swift</p>
+
+<pre><code>import UIKit
+import NXLogging
+
+class TextViewLogTarget: NXConsoleLogTarget {
+
+    private var textView: UITextView
+
+    init!(textView: UITextView!) {
+        let formatter = NXBasicLogFormatter()
+
+        super.init(formatter: formatter)
+
+        self.textView = textView
+        self.colorsEnabled = true
+        formatter.hiddenInfo = NXLogInfo.All.exclusiveOr([ .SourceCode, .Level, .Content ])
+    }
+
+    override func log(level: NXLogLevel, message: AnyObject!) {
+        var msg = String(format: "%@", message.description)
+        var color = UIColor.blackColor()
+
+        msg = msg.stringByReplacingOccurrencesOfString("\n", withString: "\n   ")
+        msg = msg.stringByAppendingString("\n\n")
+
+        if self.colorsEnabled {
+            let c = self.colorForLogLevel(level)
+            color = UIColor(red: CGFloat(c.red), green: CGFloat(c.green), blue: CGFloat(c.blue), alpha: 1.0)
+        }
+
+        // Modify the UI on the main thread. 
+        // This will happen sequentially, so we don't need to worry about thread-safety when accessing the textView property.
+
+        dispatch_async(dispatch_get_main_queue()) {
+            let text = NSMutableAttributedString(attributedString: self.textView.attributedText)
+            let attr = [ NSForegroundColorAttributeName : color ]                
+
+            text.appendAttributedString(NSAttributedString(string: msg, attributes: attr))
+
+            self.textView.attributedText = text
+        }
+    }
+}
+</code></pre>
+
+<p>and LogViewController.swift</p>
+
+<pre><code>import UIKit
+import NXLogging
+
+class LogViewController: UIViewController {
+
+    /// The text view outlet
+    @IBOutlet weak var textView: UITextView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        NXLogger.applicationLogger().addLogTarget(TextViewLogTarget(textView: textView))
+    }
+}
+</code></pre>
+
+<p>Done. Again, assign the <em>LogViewController</em> class to a view controller in interface builder and link the <em>textView</em> property to an <em>UITextView</em>.</p>
+
+					<footer>
+						<div class="footer-copyright">
+							
+							<p class="copyright">Copyright &copy; 2016 Naxos Software Solutions GmbH. All rights reserved. Updated: 2016-06-02</p>
+							
+							
+							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+							
+						</div>
+					</footer>
+				</main>
+			</div>
+		</div>
+	</article>
+
+	<script src="../../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,568 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		454E33B01C779BCA00152439 /* Universal Framework */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 454E33B11C779BCA00152439 /* Build configuration list for PBXAggregateTarget "Universal Framework" */;
+			buildPhases = (
+				454E33B41C779BDA00152439 /* Build & Lipo */,
+				454E33D81C787F6600152439 /* Apple Doc */,
+			);
+			dependencies = (
+				454E33B61C779BE500152439 /* PBXTargetDependency */,
+			);
+			name = "Universal Framework";
+			productName = "Universal Framework";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		4516230A1C8B156B0078446C /* NXLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451623091C8B156B0078446C /* NXLogger.swift */; };
+		452887CC1C9321E200865E7B /* NXTextColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 452887CA1C9321E200865E7B /* NXTextColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		452887CD1C9321E200865E7B /* NXTextColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 452887CB1C9321E200865E7B /* NXTextColor.m */; };
+		452887D51C96AF7500865E7B /* NXFileLogTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 452887D31C96AF7500865E7B /* NXFileLogTarget.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		452887D61C96AF7500865E7B /* NXFileLogTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 452887D41C96AF7500865E7B /* NXFileLogTarget.m */; };
+		454E33A91C779AC300152439 /* NXLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 454E33A81C779AC300152439 /* NXLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		454E33C91C779C8D00152439 /* NXLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 454E33C01C779C8D00152439 /* NXLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		454E33CA1C779C8D00152439 /* NXLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 454E33C11C779C8D00152439 /* NXLogger.m */; };
+		454E33CB1C779C8D00152439 /* NXLogRegistry.h in Headers */ = {isa = PBXBuildFile; fileRef = 454E33C21C779C8D00152439 /* NXLogRegistry.h */; };
+		454E33CC1C779C8D00152439 /* NXLogRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 454E33C31C779C8D00152439 /* NXLogRegistry.m */; };
+		454E33CD1C779C8D00152439 /* NXLogTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 454E33C41C779C8D00152439 /* NXLogTarget.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		458003E21C8C8E37000641C8 /* NXJSONLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 458003E01C8C8E37000641C8 /* NXJSONLogFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		458003E31C8C8E37000641C8 /* NXJSONLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 458003E11C8C8E37000641C8 /* NXJSONLogFormatter.m */; };
+		458003E61C8CA252000641C8 /* NXDictionaryLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 458003E41C8CA252000641C8 /* NXDictionaryLogFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		458003E71C8CA252000641C8 /* NXDictionaryLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 458003E51C8CA252000641C8 /* NXDictionaryLogFormatter.m */; };
+		45C2C4FD1C8DC3CB007D5D04 /* NXLogTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 45C2C4FC1C8DC372007D5D04 /* NXLogTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45C2C5011C8EDB70007D5D04 /* NSException+NXLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 45C2C4FF1C8EDB70007D5D04 /* NSException+NXLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45C2C5021C8EDB70007D5D04 /* NSException+NXLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C2C5001C8EDB70007D5D04 /* NSException+NXLogging.m */; };
+		45C2C5041C8EF86E007D5D04 /* NSException+NXLogging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C2C5031C8EF86E007D5D04 /* NSException+NXLogging.swift */; };
+		45C2C5061C8F527C007D5D04 /* NSError+NXLogging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C2C5051C8F527C007D5D04 /* NSError+NXLogging.swift */; };
+		45D862231C78B7ED00DC4C7E /* NXSystemLogTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D862211C78B7ED00DC4C7E /* NXSystemLogTarget.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45D862241C78B7ED00DC4C7E /* NXSystemLogTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D862221C78B7ED00DC4C7E /* NXSystemLogTarget.m */; };
+		45D862301C78C22A00DC4C7E /* NXSystemLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D8622E1C78C22A00DC4C7E /* NXSystemLogFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45D862311C78C22A00DC4C7E /* NXSystemLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D8622F1C78C22A00DC4C7E /* NXSystemLogFormatter.m */; };
+		45D862331C78C34B00DC4C7E /* NXLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D862321C78C34B00DC4C7E /* NXLogFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45F037D61C78F18900EF6FB8 /* NSError+NXLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F037D21C78F18900EF6FB8 /* NSError+NXLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45F037D71C78F18900EF6FB8 /* NSError+NXLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F037D31C78F18900EF6FB8 /* NSError+NXLogging.m */; };
+		45F0383B1C7B1F8C00EF6FB8 /* NXConsoleLogTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F038391C7B1F8C00EF6FB8 /* NXConsoleLogTarget.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45F0383C1C7B1F8C00EF6FB8 /* NXConsoleLogTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F0383A1C7B1F8C00EF6FB8 /* NXConsoleLogTarget.m */; };
+		45F0383F1C7B28A000EF6FB8 /* NXBasicLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F0383D1C7B28A000EF6FB8 /* NXBasicLogFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45F038401C7B28A000EF6FB8 /* NXBasicLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F0383E1C7B28A000EF6FB8 /* NXBasicLogFormatter.m */; };
+		45F038431C7B29E500EF6FB8 /* NXDebugLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F038411C7B29E500EF6FB8 /* NXDebugLogFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45F038441C7B29E500EF6FB8 /* NXDebugLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F038421C7B29E500EF6FB8 /* NXDebugLogFormatter.m */; };
+		45F038481C7B784000EF6FB8 /* NXLogClientInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F038461C7B784000EF6FB8 /* NXLogClientInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45F038491C7B784000EF6FB8 /* NXLogClientInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F038471C7B784000EF6FB8 /* NXLogClientInfo.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		454E33B51C779BE500152439 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 454E339C1C779AC300152439 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 454E33A41C779AC300152439;
+			remoteInfo = NXLogging;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		451623091C8B156B0078446C /* NXLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NXLogger.swift; sourceTree = "<group>"; };
+		452887CA1C9321E200865E7B /* NXTextColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXTextColor.h; sourceTree = "<group>"; };
+		452887CB1C9321E200865E7B /* NXTextColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXTextColor.m; sourceTree = "<group>"; };
+		452887D31C96AF7500865E7B /* NXFileLogTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXFileLogTarget.h; sourceTree = "<group>"; };
+		452887D41C96AF7500865E7B /* NXFileLogTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXFileLogTarget.m; sourceTree = "<group>"; };
+		452A28801CFFFF8C004456E5 /* 01-Read_me-template.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "01-Read_me-template.markdown"; sourceTree = "<group>"; };
+		452A28811CFFFF8C004456E5 /* 02-Advanced_Logging-template.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "02-Advanced_Logging-template.markdown"; sourceTree = "<group>"; };
+		452A28821CFFFF8C004456E5 /* 03-Architecture-template.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "03-Architecture-template.markdown"; sourceTree = "<group>"; };
+		452A28831CFFFF8C004456E5 /* 04-Customisation-template.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "04-Customisation-template.markdown"; sourceTree = "<group>"; };
+		452A28841CFFFF8C004456E5 /* 05-Extensions-template.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "05-Extensions-template.markdown"; sourceTree = "<group>"; };
+		454E33A51C779AC300152439 /* NXLogging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NXLogging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		454E33A81C779AC300152439 /* NXLogging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NXLogging.h; sourceTree = "<group>"; };
+		454E33AA1C779AC300152439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		454E33C01C779C8D00152439 /* NXLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXLogger.h; sourceTree = "<group>"; };
+		454E33C11C779C8D00152439 /* NXLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXLogger.m; sourceTree = "<group>"; };
+		454E33C21C779C8D00152439 /* NXLogRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXLogRegistry.h; sourceTree = "<group>"; };
+		454E33C31C779C8D00152439 /* NXLogRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXLogRegistry.m; sourceTree = "<group>"; };
+		454E33C41C779C8D00152439 /* NXLogTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXLogTarget.h; sourceTree = "<group>"; };
+		458003E01C8C8E37000641C8 /* NXJSONLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXJSONLogFormatter.h; sourceTree = "<group>"; };
+		458003E11C8C8E37000641C8 /* NXJSONLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXJSONLogFormatter.m; sourceTree = "<group>"; };
+		458003E41C8CA252000641C8 /* NXDictionaryLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXDictionaryLogFormatter.h; sourceTree = "<group>"; };
+		458003E51C8CA252000641C8 /* NXDictionaryLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXDictionaryLogFormatter.m; sourceTree = "<group>"; };
+		45C2C4FC1C8DC372007D5D04 /* NXLogTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NXLogTypes.h; sourceTree = "<group>"; };
+		45C2C4FF1C8EDB70007D5D04 /* NSException+NXLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSException+NXLogging.h"; sourceTree = "<group>"; };
+		45C2C5001C8EDB70007D5D04 /* NSException+NXLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSException+NXLogging.m"; sourceTree = "<group>"; };
+		45C2C5031C8EF86E007D5D04 /* NSException+NXLogging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSException+NXLogging.swift"; sourceTree = "<group>"; };
+		45C2C5051C8F527C007D5D04 /* NSError+NXLogging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+NXLogging.swift"; sourceTree = "<group>"; };
+		45D862211C78B7ED00DC4C7E /* NXSystemLogTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXSystemLogTarget.h; sourceTree = "<group>"; };
+		45D862221C78B7ED00DC4C7E /* NXSystemLogTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXSystemLogTarget.m; sourceTree = "<group>"; };
+		45D8622E1C78C22A00DC4C7E /* NXSystemLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXSystemLogFormatter.h; sourceTree = "<group>"; };
+		45D8622F1C78C22A00DC4C7E /* NXSystemLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXSystemLogFormatter.m; sourceTree = "<group>"; };
+		45D862321C78C34B00DC4C7E /* NXLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXLogFormatter.h; sourceTree = "<group>"; };
+		45F037D21C78F18900EF6FB8 /* NSError+NXLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+NXLogging.h"; sourceTree = "<group>"; };
+		45F037D31C78F18900EF6FB8 /* NSError+NXLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+NXLogging.m"; sourceTree = "<group>"; };
+		45F038391C7B1F8C00EF6FB8 /* NXConsoleLogTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXConsoleLogTarget.h; sourceTree = "<group>"; };
+		45F0383A1C7B1F8C00EF6FB8 /* NXConsoleLogTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXConsoleLogTarget.m; sourceTree = "<group>"; };
+		45F0383D1C7B28A000EF6FB8 /* NXBasicLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXBasicLogFormatter.h; sourceTree = "<group>"; };
+		45F0383E1C7B28A000EF6FB8 /* NXBasicLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXBasicLogFormatter.m; sourceTree = "<group>"; };
+		45F038411C7B29E500EF6FB8 /* NXDebugLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXDebugLogFormatter.h; sourceTree = "<group>"; };
+		45F038421C7B29E500EF6FB8 /* NXDebugLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXDebugLogFormatter.m; sourceTree = "<group>"; };
+		45F038461C7B784000EF6FB8 /* NXLogClientInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXLogClientInfo.h; sourceTree = "<group>"; };
+		45F038471C7B784000EF6FB8 /* NXLogClientInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXLogClientInfo.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		454E33A11C779AC300152439 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		452A287F1CFFFF8C004456E5 /* DocTemplates */ = {
+			isa = PBXGroup;
+			children = (
+				452A28801CFFFF8C004456E5 /* 01-Read_me-template.markdown */,
+				452A28811CFFFF8C004456E5 /* 02-Advanced_Logging-template.markdown */,
+				452A28821CFFFF8C004456E5 /* 03-Architecture-template.markdown */,
+				452A28831CFFFF8C004456E5 /* 04-Customisation-template.markdown */,
+				452A28841CFFFF8C004456E5 /* 05-Extensions-template.markdown */,
+			);
+			path = DocTemplates;
+			sourceTree = SOURCE_ROOT;
+		};
+		454E339B1C779AC300152439 = {
+			isa = PBXGroup;
+			children = (
+				454E33A71C779AC300152439 /* NXLogging */,
+				454E33A61C779AC300152439 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		454E33A61C779AC300152439 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				454E33A51C779AC300152439 /* NXLogging.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		454E33A71C779AC300152439 /* NXLogging */ = {
+			isa = PBXGroup;
+			children = (
+				452A287F1CFFFF8C004456E5 /* DocTemplates */,
+				45F037CF1C78F18900EF6FB8 /* helper */,
+				45D8622D1C78C20400DC4C7E /* format */,
+				45D862201C78B7ED00DC4C7E /* target */,
+				454E33A81C779AC300152439 /* NXLogging.h */,
+				45C2C4FC1C8DC372007D5D04 /* NXLogTypes.h */,
+				454E33C41C779C8D00152439 /* NXLogTarget.h */,
+				45D862321C78C34B00DC4C7E /* NXLogFormatter.h */,
+				45F038461C7B784000EF6FB8 /* NXLogClientInfo.h */,
+				45F038471C7B784000EF6FB8 /* NXLogClientInfo.m */,
+				454E33C01C779C8D00152439 /* NXLogger.h */,
+				454E33C11C779C8D00152439 /* NXLogger.m */,
+				451623091C8B156B0078446C /* NXLogger.swift */,
+				454E33C21C779C8D00152439 /* NXLogRegistry.h */,
+				454E33C31C779C8D00152439 /* NXLogRegistry.m */,
+				452887CA1C9321E200865E7B /* NXTextColor.h */,
+				452887CB1C9321E200865E7B /* NXTextColor.m */,
+				454E33AA1C779AC300152439 /* Info.plist */,
+			);
+			path = NXLogging;
+			sourceTree = "<group>";
+		};
+		45D862201C78B7ED00DC4C7E /* target */ = {
+			isa = PBXGroup;
+			children = (
+				45D862211C78B7ED00DC4C7E /* NXSystemLogTarget.h */,
+				45D862221C78B7ED00DC4C7E /* NXSystemLogTarget.m */,
+				45F038391C7B1F8C00EF6FB8 /* NXConsoleLogTarget.h */,
+				45F0383A1C7B1F8C00EF6FB8 /* NXConsoleLogTarget.m */,
+				452887D31C96AF7500865E7B /* NXFileLogTarget.h */,
+				452887D41C96AF7500865E7B /* NXFileLogTarget.m */,
+			);
+			path = target;
+			sourceTree = "<group>";
+		};
+		45D8622D1C78C20400DC4C7E /* format */ = {
+			isa = PBXGroup;
+			children = (
+				45F0383D1C7B28A000EF6FB8 /* NXBasicLogFormatter.h */,
+				45F0383E1C7B28A000EF6FB8 /* NXBasicLogFormatter.m */,
+				45D8622E1C78C22A00DC4C7E /* NXSystemLogFormatter.h */,
+				45D8622F1C78C22A00DC4C7E /* NXSystemLogFormatter.m */,
+				45F038411C7B29E500EF6FB8 /* NXDebugLogFormatter.h */,
+				45F038421C7B29E500EF6FB8 /* NXDebugLogFormatter.m */,
+				458003E41C8CA252000641C8 /* NXDictionaryLogFormatter.h */,
+				458003E51C8CA252000641C8 /* NXDictionaryLogFormatter.m */,
+				458003E01C8C8E37000641C8 /* NXJSONLogFormatter.h */,
+				458003E11C8C8E37000641C8 /* NXJSONLogFormatter.m */,
+			);
+			path = format;
+			sourceTree = "<group>";
+		};
+		45F037CF1C78F18900EF6FB8 /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				45F037D21C78F18900EF6FB8 /* NSError+NXLogging.h */,
+				45F037D31C78F18900EF6FB8 /* NSError+NXLogging.m */,
+				45C2C5051C8F527C007D5D04 /* NSError+NXLogging.swift */,
+				45C2C4FF1C8EDB70007D5D04 /* NSException+NXLogging.h */,
+				45C2C5001C8EDB70007D5D04 /* NSException+NXLogging.m */,
+				45C2C5031C8EF86E007D5D04 /* NSException+NXLogging.swift */,
+			);
+			path = helper;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		454E33A21C779AC300152439 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				454E33CD1C779C8D00152439 /* NXLogTarget.h in Headers */,
+				45D862331C78C34B00DC4C7E /* NXLogFormatter.h in Headers */,
+				45D862231C78B7ED00DC4C7E /* NXSystemLogTarget.h in Headers */,
+				45D862301C78C22A00DC4C7E /* NXSystemLogFormatter.h in Headers */,
+				45F037D61C78F18900EF6FB8 /* NSError+NXLogging.h in Headers */,
+				458003E21C8C8E37000641C8 /* NXJSONLogFormatter.h in Headers */,
+				454E33A91C779AC300152439 /* NXLogging.h in Headers */,
+				45F0383B1C7B1F8C00EF6FB8 /* NXConsoleLogTarget.h in Headers */,
+				45F038431C7B29E500EF6FB8 /* NXDebugLogFormatter.h in Headers */,
+				45F0383F1C7B28A000EF6FB8 /* NXBasicLogFormatter.h in Headers */,
+				45F038481C7B784000EF6FB8 /* NXLogClientInfo.h in Headers */,
+				458003E61C8CA252000641C8 /* NXDictionaryLogFormatter.h in Headers */,
+				454E33C91C779C8D00152439 /* NXLogger.h in Headers */,
+				452887CC1C9321E200865E7B /* NXTextColor.h in Headers */,
+				452887D51C96AF7500865E7B /* NXFileLogTarget.h in Headers */,
+				45C2C5011C8EDB70007D5D04 /* NSException+NXLogging.h in Headers */,
+				45C2C4FD1C8DC3CB007D5D04 /* NXLogTypes.h in Headers */,
+				454E33CB1C779C8D00152439 /* NXLogRegistry.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		454E33A41C779AC300152439 /* NXLogging */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 454E33AD1C779AC300152439 /* Build configuration list for PBXNativeTarget "NXLogging" */;
+			buildPhases = (
+				454E33A01C779AC300152439 /* Sources */,
+				454E33A11C779AC300152439 /* Frameworks */,
+				454E33A21C779AC300152439 /* Headers */,
+				454E33A31C779AC300152439 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NXLogging;
+			productName = NXLogging;
+			productReference = 454E33A51C779AC300152439 /* NXLogging.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		454E339C1C779AC300152439 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Naxos Software Solutions GmbH";
+				TargetAttributes = {
+					454E33A41C779AC300152439 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					454E33B01C779BCA00152439 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 454E339F1C779AC300152439 /* Build configuration list for PBXProject "NXLogging" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 454E339B1C779AC300152439;
+			productRefGroup = 454E33A61C779AC300152439 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				454E33A41C779AC300152439 /* NXLogging */,
+				454E33B01C779BCA00152439 /* Universal Framework */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		454E33A31C779AC300152439 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		454E33B41C779BDA00152439 /* Build & Lipo */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build & Lipo";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# FROM: http://stackoverflow.com/questions/24039470/xcode-6-ios-creating-a-cocoa-touch-framework-architectures-issues (user3437673)\n# Added OTHER_CFLAGS=\"-fembed-bitcode\" to force bitcode generation\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${PROJECT_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" OTHER_CFLAGS=\"-fembed-bitcode\" clean build\nxcodebuild -target \"${PROJECT_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphonesimulator VALID_ARCHS=\"x86_64 i386\" BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" OTHER_CFLAGS=\"-fembed-bitcode\" clean build\n\n# Step 2. Copy the framework structure to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# Step 3. Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework/${PROJECT_NAME}\"\n\n# Step 4. Combine the swift modules\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule/\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule/\"\n\n# Step 5. Convenience step to copy the framework to the project's directory\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework\" \"${PROJECT_DIR}\"\n\n# Step 6. Delete temporary build directory in the project's directory\nrm -rf \"${PROJECT_DIR}/build\"\n\n# Step 7. Convenience step to open the project's directory in Finder\nopen \"${PROJECT_DIR}\"\n";
+		};
+		454E33D81C787F6600152439 /* Apple Doc */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Apple Doc";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"Naxos Software Solutions GmbH\";\ncompanyID=\"com.naxos-software\";\ncompanyURL=\"http://naxos-software.com\";\ntarget=\"iphoneos\";\n#target=\"macosx\";\noutputPath=\"${PROJECT_DIR}/Docs\";\n# End constants\n/usr/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--docset-atom-filename \"${company}.atom\" \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" \\\n--docset-fallback-url \"${companyURL}/${company}\" \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" \\\n--output \"${outputPath}\" \\\n--install-docset \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--exit-threshold 2 \\\n--include ./DocTemplates/ \\\n\"${PROJECT_DIR}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		454E33A01C779AC300152439 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				454E33CC1C779C8D00152439 /* NXLogRegistry.m in Sources */,
+				45C2C5041C8EF86E007D5D04 /* NSException+NXLogging.swift in Sources */,
+				452887CD1C9321E200865E7B /* NXTextColor.m in Sources */,
+				45F038441C7B29E500EF6FB8 /* NXDebugLogFormatter.m in Sources */,
+				45F038491C7B784000EF6FB8 /* NXLogClientInfo.m in Sources */,
+				45C2C5061C8F527C007D5D04 /* NSError+NXLogging.swift in Sources */,
+				45C2C5021C8EDB70007D5D04 /* NSException+NXLogging.m in Sources */,
+				458003E31C8C8E37000641C8 /* NXJSONLogFormatter.m in Sources */,
+				45F037D71C78F18900EF6FB8 /* NSError+NXLogging.m in Sources */,
+				45D862311C78C22A00DC4C7E /* NXSystemLogFormatter.m in Sources */,
+				4516230A1C8B156B0078446C /* NXLogger.swift in Sources */,
+				45F038401C7B28A000EF6FB8 /* NXBasicLogFormatter.m in Sources */,
+				45D862241C78B7ED00DC4C7E /* NXSystemLogTarget.m in Sources */,
+				454E33CA1C779C8D00152439 /* NXLogger.m in Sources */,
+				452887D61C96AF7500865E7B /* NXFileLogTarget.m in Sources */,
+				45F0383C1C7B1F8C00EF6FB8 /* NXConsoleLogTarget.m in Sources */,
+				458003E71C8CA252000641C8 /* NXDictionaryLogFormatter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		454E33B61C779BE500152439 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 454E33A41C779AC300152439 /* NXLogging */;
+			targetProxy = 454E33B51C779BE500152439 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		454E33AB1C779AC300152439 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = mh_dylib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		454E33AC1C779AC300152439 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = mh_dylib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		454E33AE1C779AC300152439 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = NXLogging/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.naxos-software.NXLogging";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		454E33AF1C779AC300152439 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = NXLogging/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.naxos-software.NXLogging";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		454E33B21C779BCA00152439 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		454E33B31C779BCA00152439 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		454E339F1C779AC300152439 /* Build configuration list for PBXProject "NXLogging" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				454E33AB1C779AC300152439 /* Debug */,
+				454E33AC1C779AC300152439 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		454E33AD1C779AC300152439 /* Build configuration list for PBXNativeTarget "NXLogging" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				454E33AE1C779AC300152439 /* Debug */,
+				454E33AF1C779AC300152439 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		454E33B11C779BCA00152439 /* Build configuration list for PBXAggregateTarget "Universal Framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				454E33B21C779BCA00152439 /* Debug */,
+				454E33B31C779BCA00152439 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 454E339C1C779AC300152439 /* Project object */;
+}

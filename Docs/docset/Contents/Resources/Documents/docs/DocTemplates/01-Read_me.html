@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>01-Read_me Document</title>
+
+	<link rel="stylesheet" href="../../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../../index.html">NXLogging </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../../index.html">Naxos Software Solutions GmbH</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../../index.html">Home</a></li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview-contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">01-Read_me Document</h1>
+
+					<h1>About NXLogging</h1>
+
+<p>NXLogging is a modern and easy-to-use logging framework for Objective C and Swift on iOS. It was designed with the programmer&rsquo;s efficiency in mind and using it for logging remains as simple as writing <em>NSLog(&hellip;)</em> while allowing broad control, flexibility and extensibility.</p>
+
+<p>Main goals of NXLogging:</p>
+
+<ul>
+<li>Keep logging as easy as using <em>NSLog(&hellip;)</em>.</li>
+<li>Support debug console and system log out of the box.</li>
+<li>Log useful information about the caller, e.g. file and function.</li>
+<li>Take special care of logging <em>NSError</em>, <em>NSException</em> and <em>ErrorType</em>.</li>
+<li>No ramp-up code and configuration necessary.</li>
+<li>Simple, understandable API for customisation and extension.</li>
+</ul>
+
+
+<h1>How to get started</h1>
+
+<p>Download the NXLogging Xcode-Project and build the <em>Universal Framework</em> target. Add the resulting <em>NXLogging.framework</em> to the <em>Embedded Binaries</em> of your own project (in Xcode&rsquo;s <em>General</em> section of your build target).</p>
+
+<h2>Objective C usage</h2>
+
+<pre><code>@import NXLogging; // or: #import &lt;NXLogging/NXLogging.h&gt;
+</code></pre>
+
+<pre><code>NXLog(NXLogLevelInfo, @"A simple log message");
+NXLog(NXLogLevelInfo, @"A simple log message with an %@", @"argument");
+</code></pre>
+
+<h2>Swift usage</h2>
+
+<pre><code>import NXLogging
+</code></pre>
+
+<pre><code>NXLog(NXLogLevel.Info, "A simple log message");
+NXLog(NXLogLevel.Info, "A simple log message with an %@", "argument");
+</code></pre>
+
+<p>While NXLogging offers the above C-style functions to Swift programmers, too, consider using the more flexible native API:</p>
+
+<pre><code>NXLogger.log(NXLogLevel.Info, format: "A simple log message")
+NXLogger.log(NXLogLevel.Info, format: "A simple log message with an %@", "argument")
+</code></pre>
+
+<p>In principle you can stop reading here, and just start using the NXLogging framework. However, we strongly encourage you to take a few more minutes and delve into</p>
+
+<ul>
+<li><a href="02-Advanced_Logging.html">Advanced logging</a> - Log levels, logging of errors and exceptions, variables</li>
+<li><a href="03-Architecture.html">Architecture</a> - Concepts of the framework</li>
+<li><a href="04-Customisation.html">Customisation</a> - Customised log output</li>
+<li><a href="05-Extensions.html">Extensions</a> - Extending the framework</li>
+</ul>
+
+
+<p>We hope, you will enjoy NXLogging and wish you happy coding! If you have any questions, don&rsquo;t hesitate to contact us at <a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#x69;&#110;&#x66;&#x6f;&#64;&#110;&#x61;&#120;&#111;&#115;&#45;&#x73;&#111;&#x66;&#x74;&#119;&#97;&#x72;&#x65;&#x2e;&#x63;&#111;&#109;">&#105;&#x6e;&#x66;&#111;&#x40;&#110;&#x61;&#x78;&#x6f;&#x73;&#x2d;&#115;&#x6f;&#x66;&#116;&#x77;&#x61;&#114;&#x65;&#46;&#x63;&#x6f;&#x6d;</a>.</p>
+
+<h1>License</h1>
+
+<p>NXLogging is licensed under the <em>Simplified BSD License</em>:</p>
+
+<p>Copyright &copy; 2016, Naxos Software Solutions GmbH
+All rights reserved.</p>
+
+<p>Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:</p>
+
+<ol>
+<li>Redistributions of source code must retain the above copyright notice, this
+list of conditions and the following disclaimer.</li>
+<li>Redistributions in binary form must reproduce the above copyright notice,
+this list of conditions and the following disclaimer in the documentation
+and/or other materials provided with the distribution.</li>
+</ol>
+
+
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &ldquo;AS IS&rdquo; AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+
+					<footer>
+						<div class="footer-copyright">
+							
+							<p class="copyright">Copyright &copy; 2016 Naxos Software Solutions GmbH. All rights reserved. Updated: 2016-06-02</p>
+							
+							
+							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+							
+						</div>
+					</footer>
+				</main>
+			</div>
+		</div>
+	</article>
+
+	<script src="../../js/script.js"></script>
+</body>
+</html>

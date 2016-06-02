@@ -1,0 +1,10 @@
+framework module NXLogging {
+  umbrella header "NXLogging.h"
+
+  export *
+  module * { export * }
+}
+
+module NXLogging.Swift {
+    header "NXLogging-Swift.h"
+}

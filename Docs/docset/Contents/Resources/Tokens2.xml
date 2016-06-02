@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="docs/DocTemplates/02-Advanced_Logging.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/doc/02-Advanced_Logging</TokenIdentifier>
+			<Abstract type="html">Advanced Logging
+================</Abstract>
+			<DeclaredIn>02-Advanced_Logging-template.markdown</DeclaredIn>
+            
+			
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+        
+        
+	</File>
+</Tokens>

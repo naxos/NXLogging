@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/NXDictionaryLogFormatter.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/NXDictionaryLogFormatter</TokenIdentifier>
+			<Abstract type="html">A log formatter, that converts the log entry into a dictionary.
+The resulting dictionary only contains strings or numbers
+(or arrays thereof) and --in case of an error or exception--
+nested dictionary structures.
+Thus, the resulting dictionary is trivial to serialize.
+The log date is formatted with the configured dateFormat;
+by default the pattern yyyy-MM-dd&apos;T&apos;HH:mm:ss.SSSZZZ is used.</Abstract>
+			<DeclaredIn>NXDictionaryLogFormatter.h</DeclaredIn>
+            
+			
+			<NodeRef refid="9"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NXDictionaryLogFormatter/sharedInstance</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NXDictionaryLogFormatter.m</DeclaredIn>
+			
+			<Declaration>+ (instancetype)sharedInstance</Declaration>
+			
+			
+			<Anchor>//api/name/sharedInstance</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/NXBasicLogFormatter.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/NXBasicLogFormatter</TokenIdentifier>
+			<Abstract type="html">A basic configurable log formatter.
+Serves as a basis for most log formatters.</Abstract>
+			<DeclaredIn>NXBasicLogFormatter.h</DeclaredIn>
+            
+			
+			<NodeRef refid="6"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXBasicLogFormatter/setDateFormatter:</TokenIdentifier>
+			<Abstract type="html">The date formatter for the log. Default date format is &quot;yyyy-MM-dd HH:mm:ss&quot;.</Abstract>
+			<DeclaredIn>NXBasicLogFormatter.h</DeclaredIn>
+			
+			<Declaration>@property (atomic) NSDateFormatter *dateFormatter</Declaration>
+			
+			
+			<Anchor>//api/name/dateFormatter</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXBasicLogFormatter/dateFormatter</TokenIdentifier>
+			<Abstract type="html">The date formatter for the log. Default date format is &quot;yyyy-MM-dd HH:mm:ss&quot;.</Abstract>
+			<DeclaredIn>NXBasicLogFormatter.h</DeclaredIn>
+			
+			<Declaration>@property (atomic) NSDateFormatter *dateFormatter</Declaration>
+			
+			
+			<Anchor>//api/name/dateFormatter</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NXBasicLogFormatter/dateFormatter</TokenIdentifier>
+			<Abstract type="html">The date formatter for the log. Default date format is &quot;yyyy-MM-dd HH:mm:ss&quot;.</Abstract>
+			<DeclaredIn>NXBasicLogFormatter.h</DeclaredIn>
+			
+			<Declaration>@property (atomic) NSDateFormatter *dateFormatter</Declaration>
+			
+			
+			<Anchor>//api/name/dateFormatter</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXBasicLogFormatter/setHiddenInfo:</TokenIdentifier>
+			<Abstract type="html">The bit mask representing the info to be excluded from the log message. Defaults to NXLogInfoNone.</Abstract>
+			<DeclaredIn>NXBasicLogFormatter.h</DeclaredIn>
+			
+			<Declaration>@property (atomic) NXLogInfo hiddenInfo</Declaration>
+			
+			
+			<Anchor>//api/name/hiddenInfo</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXBasicLogFormatter/hiddenInfo</TokenIdentifier>
+			<Abstract type="html">The bit mask representing the info to be excluded from the log message. Defaults to NXLogInfoNone.</Abstract>
+			<DeclaredIn>NXBasicLogFormatter.h</DeclaredIn>
+			
+			<Declaration>@property (atomic) NXLogInfo hiddenInfo</Declaration>
+			
+			
+			<Anchor>//api/name/hiddenInfo</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NXBasicLogFormatter/hiddenInfo</TokenIdentifier>
+			<Abstract type="html">The bit mask representing the info to be excluded from the log message. Defaults to NXLogInfoNone.</Abstract>
+			<DeclaredIn>NXBasicLogFormatter.h</DeclaredIn>
+			
+			<Declaration>@property (atomic) NXLogInfo hiddenInfo</Declaration>
+			
+			
+			<Anchor>//api/name/hiddenInfo</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXBasicLogFormatter/setExceptionSymbolsThreshold:</TokenIdentifier>
+			<Abstract type="html">The minimum log level from which to include call stack symbols, when logging exceptions. Defaults to NXLogLevelError.</Abstract>
+			<DeclaredIn>NXBasicLogFormatter.h</DeclaredIn>
+			
+			<Declaration>@property (atomic) NXLogLevel exceptionSymbolsThreshold</Declaration>
+			
+			
+			<Anchor>//api/name/exceptionSymbolsThreshold</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXBasicLogFormatter/exceptionSymbolsThreshold</TokenIdentifier>
+			<Abstract type="html">The minimum log level from which to include call stack symbols, when logging exceptions. Defaults to NXLogLevelError.</Abstract>
+			<DeclaredIn>NXBasicLogFormatter.h</DeclaredIn>
+			
+			<Declaration>@property (atomic) NXLogLevel exceptionSymbolsThreshold</Declaration>
+			
+			
+			<Anchor>//api/name/exceptionSymbolsThreshold</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NXBasicLogFormatter/exceptionSymbolsThreshold</TokenIdentifier>
+			<Abstract type="html">The minimum log level from which to include call stack symbols, when logging exceptions. Defaults to NXLogLevelError.</Abstract>
+			<DeclaredIn>NXBasicLogFormatter.h</DeclaredIn>
+			
+			<Declaration>@property (atomic) NXLogLevel exceptionSymbolsThreshold</Declaration>
+			
+			
+			<Anchor>//api/name/exceptionSymbolsThreshold</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NXBasicLogFormatter/sharedInstance</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NXBasicLogFormatter.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)sharedInstance</Declaration>
+			
+			
+			<Anchor>//api/name/sharedInstance</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NXBasicLogFormatter/levelName:</TokenIdentifier>
+			<Abstract type="html">Get the name of a log level</Abstract>
+			<DeclaredIn>NXBasicLogFormatter.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)levelName:(NXLogLevel)level</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>level</Name>
+					<Abstract type="html">The log level</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The name of the log level</Abstract></ReturnValue>
+			<Anchor>//api/name/levelName:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXBasicLogFormatter/isHiddenInfo:</TokenIdentifier>
+			<Abstract type="html">Determine if certain info is excluded from the log message</Abstract>
+			<DeclaredIn>NXBasicLogFormatter.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isHiddenInfo:(NXLogInfo)info</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>info</Name>
+					<Abstract type="html">The flag to test if the according info is hidden</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES, if the info is excluded, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/isHiddenInfo:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXBasicLogFormatter/messageForLogger:level:client:error:exception:format:arguments:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NXBasicLogFormatter.m</DeclaredIn>
+			
+			<Declaration>- (NSString *)messageForLogger:(NSString *)loggerName level:(NXLogLevel)level client:(NXLogClientInfo *)client error:(NSError *)error exception:(NSException *)exception format:(NSString *)format arguments:(va_list)arguments</Declaration>
+			
+			
+			<Anchor>//api/name/messageForLogger:level:client:error:exception:format:arguments:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

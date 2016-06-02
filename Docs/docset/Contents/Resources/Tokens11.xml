@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/NXJSONLogFormatter.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/NXJSONLogFormatter</TokenIdentifier>
+			<Abstract type="html">A JSON log formatter.</Abstract>
+			<DeclaredIn>NXJSONLogFormatter.h</DeclaredIn>
+            
+			
+			<NodeRef refid="11"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXJSONLogFormatter/setPrettyPrint:</TokenIdentifier>
+			<Abstract type="html">YES for pretty JSON output. Defaults to NO.</Abstract>
+			<DeclaredIn>NXJSONLogFormatter.h</DeclaredIn>
+			
+			<Declaration>@property (atomic) BOOL prettyPrint</Declaration>
+			
+			
+			<Anchor>//api/name/prettyPrint</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXJSONLogFormatter/prettyPrint</TokenIdentifier>
+			<Abstract type="html">YES for pretty JSON output. Defaults to NO.</Abstract>
+			<DeclaredIn>NXJSONLogFormatter.h</DeclaredIn>
+			
+			<Declaration>@property (atomic) BOOL prettyPrint</Declaration>
+			
+			
+			<Anchor>//api/name/prettyPrint</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NXJSONLogFormatter/prettyPrint</TokenIdentifier>
+			<Abstract type="html">YES for pretty JSON output. Defaults to NO.</Abstract>
+			<DeclaredIn>NXJSONLogFormatter.h</DeclaredIn>
+			
+			<Declaration>@property (atomic) BOOL prettyPrint</Declaration>
+			
+			
+			<Anchor>//api/name/prettyPrint</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NXJSONLogFormatter/sharedInstance</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NXJSONLogFormatter.m</DeclaredIn>
+			
+			<Declaration>+ (instancetype)sharedInstance</Declaration>
+			
+			
+			<Anchor>//api/name/sharedInstance</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>
