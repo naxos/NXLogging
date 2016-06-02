@@ -20,12 +20,12 @@ by default the pattern yyyy-MM-dd&apos;T&apos;HH:mm:ss.SSSZZZ is used.</Abstract
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/NXDictionaryLogFormatter/sharedInstance</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Get the singleton instance.</Abstract>
 			<DeclaredIn>NXDictionaryLogFormatter.m</DeclaredIn>
 			
 			<Declaration>+ (instancetype)sharedInstance</Declaration>
 			
-			
+			<ReturnValue><Abstract type="html">The instance</Abstract></ReturnValue>
 			<Anchor>//api/name/sharedInstance</Anchor>
             <NodeRef refid="9"/>
 		</Token>

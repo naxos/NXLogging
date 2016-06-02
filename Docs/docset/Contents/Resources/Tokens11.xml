@@ -50,13 +50,25 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/NXJSONLogFormatter/sharedInstance</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Get the singleton instance.</Abstract>
 			<DeclaredIn>NXJSONLogFormatter.m</DeclaredIn>
 			
 			<Declaration>+ (instancetype)sharedInstance</Declaration>
 			
-			
+			<ReturnValue><Abstract type="html">The instance</Abstract></ReturnValue>
 			<Anchor>//api/name/sharedInstance</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXJSONLogFormatter/messageForLogger:level:client:error:exception:format:arguments:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NXJSONLogFormatter.m</DeclaredIn>
+			
+			<Declaration>- (NSString *)messageForLogger:(NSString *)loggerName level:(NXLogLevel)level client:(NXLogClientInfo *)client error:(NSError *)error exception:(NSException *)exception format:(NSString *)format arguments:(va_list)arguments</Declaration>
+			
+			
+			<Anchor>//api/name/messageForLogger:level:client:error:exception:format:arguments:</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		

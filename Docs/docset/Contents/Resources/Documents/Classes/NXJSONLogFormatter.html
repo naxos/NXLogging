@@ -70,6 +70,12 @@
 	
 
 	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/messageForLogger:level:client:error:exception:format:arguments:">- messageForLogger:level:client:error:exception:format:arguments:</option>
+		
+	</optgroup>
+	
 	
 </select>
 						</label>
@@ -177,9 +183,55 @@
 		<div class="method-info-container">
 			
 			
+			<div class="method-subsection brief-description">
+				<p>Get the singleton instance.</p>
+			</div>
+			
 		    
 
 			<div class="method-subsection method-declaration"><code>+ (instancetype)sharedInstance</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The instance</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NXBasicLogFormatter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/messageForLogger:level:client:error:exception:format:arguments:" title="messageForLogger:level:client:error:exception:format:arguments:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/messageForLogger:level:client:error:exception:format:arguments:">&ndash;&nbsp;messageForLogger:level:client:error:exception:format:arguments:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)messageForLogger:(NSString *)<em>loggerName</em> level:(NXLogLevel)<em>level</em> client:(NXLogClientInfo *)<em>client</em> error:(NSError *)<em>error</em> exception:(NSException *)<em>exception</em> format:(NSString *)<em>format</em> arguments:(va_list)<em>arguments</em></code></div>
 
 		    
 			
@@ -197,7 +249,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NXBasicLogFormatter.h</code></p>
+				<p><code class="declared-in-ref">NXLogFormatter.h</code></p>
 			</div>
 			
 			
