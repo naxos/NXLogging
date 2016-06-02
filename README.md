@@ -51,7 +51,7 @@ NXLogger.log(NXLogLevel.Info, format: "A simple log message with an %@", "argume
 In principle you can stop reading here, and just start using the NXLogging framework. However, we strongly encourage you to take a few more minutes and delve into
 
 - [Advanced logging](Documentation/Advanced_Logging.md) - Log levels, logging of errors and exceptions, variables
-- [Architecture](Documentation/Architecture.nd) - Concepts of the framework
+- [Architecture](Documentation/Architecture.md) - Concepts of the framework
 - [Customisation](Documentation/Customisation.md) - Customised log output
 - [Extensions](Documentation/Extensions.md) - Extending the framework
 
