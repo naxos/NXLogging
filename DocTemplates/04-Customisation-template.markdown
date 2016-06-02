@@ -1,7 +1,7 @@
 Customisation
 =============
 
-It might be a good idea to read [Advanced Logging](02-Advance_Logging.html) before continuing here. For a general overview of the concepts of NXLogging, read [Architecture](03-Architecture.html).
+It might be a good idea to read [Advanced Logging](02-Advanced_Logging.html) before continuing here. For a general overview of the concepts of NXLogging, read [Architecture](03-Architecture.html).
 
 Unless you manually created a _NXLogger_ instance, any of the standard loggers use the shared instances of _NXSystemLogTarget_ and _NXConsoleLogTarget_ for log output, which themselves employ the shared instances of _NXSystemLogFormatter_ and _NXDebugLogFormatter_ respectively.
 
