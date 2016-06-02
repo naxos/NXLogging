@@ -26,13 +26,13 @@ NXLogging supports the eight log levels first introduced with syslog back in the
 In your code you will use these log levels with the prefix _NXLogLevel_. In Objective C you could write
 
 ```objectivec
-    NXLogLevel level = NXLogLevelWarning;
+NXLogLevel level = NXLogLevelWarning;
 ```
 
 and in Swift
 
 ```swift
-    let level: NXLogLevel = NXLogLevel.Warning // or for short: .Warning
+let level: NXLogLevel = NXLogLevel.Warning // or for short: .Warning
 ```
 
 On a side note: In our documentation ---and partially in the API--- we will use the terms _log level_ and _severity_, which refer to the same concept but counter-directional: _Debug_ is the __highest log level__ (most detailled) but has the __lowest severity__ (least impact). Therefore, if you configure a log target's __maximum log level__ to _Error_, it will log only log messages with a __level up to__ _Error_ (_Error_, _Critical_, _Alert_ and _Emergency_). For adjusting the maximum log level, refer to [Customisation](Customisation.md).
@@ -50,28 +50,28 @@ Logging errors
 Here is an example on error handling and logging in Objective C:
 
 ```objectivec
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"txt"];
-    NSError *error = nil;
-    NSString *content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
+NSString *path = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"txt"];
+NSError *error = nil;
+NSString *content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
 
-    if(error) {
-        NXLogError(NXLogLevelError, error, @"Unable to read file %@", path.lastPathComponent);
-    } else {
-        NXLog(NXLogLevelDebug, @"Got content:'%@' from file %@", content, path.lastPathComponent);
-    }
+if(error) {
+    NXLogError(NXLogLevelError, error, @"Unable to read file %@", path.lastPathComponent);
+} else {
+    NXLog(NXLogLevelDebug, @"Got content:'%@' from file %@", content, path.lastPathComponent);
+}
 ```
 
 and here in Swift:
 
 ```swift
-    let path : NSString! = NSBundle.mainBundle().pathForResource("test", ofType: "txt")
+let path : NSString! = NSBundle.mainBundle().pathForResource("test", ofType: "txt")
 
-    do {
-        let content = try NSString(contentsOfFile: path as String, encoding: NSUTF8StringEncoding)
-        NXLogger.log(.Debug, format: "Got content '%@' from file %@", content, path.lastPathComponent)
-    } catch {
-        NXLogger.log(.Error, error: error, format: "Unable to read file %@", path.lastPathComponent)
-    }
+do {
+    let content = try NSString(contentsOfFile: path as String, encoding: NSUTF8StringEncoding)
+    NXLogger.log(.Debug, format: "Got content '%@' from file %@", content, path.lastPathComponent)
+} catch {
+    NXLogger.log(.Error, error: error, format: "Unable to read file %@", path.lastPathComponent)
+}
 ```
 
 Appart from the obviously different error handling in the two languages, the logging is pretty much the same. If the encoding file in the examples is not UTF-8, you'll get a log message like this:
@@ -83,29 +83,29 @@ Appart from the obviously different error handling in the two languages, the log
 Here's another Swift example. Assume the implementation of a vending machine (adopted from Apple's [error handling guide](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ErrorHandling.html)):
 
 ```swift
-    enum VendingMachineError: ErrorType {
-        case InvalidSelection
-        case InsufficientFunds(coinsNeeded: Int, coinsInserted: Int)
-        case OutOfStock
-    }
+enum VendingMachineError: ErrorType {
+    case InvalidSelection
+    case InsufficientFunds(coinsNeeded: Int, coinsInserted: Int)
+    case OutOfStock
+}
 
-    func buyBeer(coins: Int) throws {
-        if (coins < 5) {
-            throw VendingMachineError.InsufficientFunds(coinsNeeded: 5, coinsInserted: coins)
-        } else {
-            ejectBeer();
-        }
+func buyBeer(coins: Int) throws {
+    if (coins < 5) {
+        throw VendingMachineError.InsufficientFunds(coinsNeeded: 5, coinsInserted: coins)
+    } else {
+        ejectBeer();
     }
+}
 ```
 
 As a caller, you can simply log an error like this:
 
 ```swift
-    do {
-        try buyBeer(3)
-    } catch {
-        NXLogger.log(error: error)
-    }
+do {
+    try buyBeer(3)
+} catch {
+    NXLogger.log(error: error)
+}
 ```
 
 In Swift, you can omit the log level for the log method and leave it to the logger to find a suitable one. Here it will use _NXLogLevel.Error_, because an _ErrorType_ was logged. Also note the details of the error message, which you get in the second line of the log output even though the error was just an enum value:
@@ -117,17 +117,17 @@ In Swift, you can omit the log level for the log method and leave it to the logg
 You can also handle the error in a slightly more elaborate way and add some information to the log by using the _NSError_ extension of NXLogging:
 
 ```swift
-    do {
-        try buyBeer(3)
-    } catch VendingMachineError.InsufficientFunds(let p) {
-        NXLogger.log(error: NSError(VendingMachineError.InsufficientFunds(p),
-            reason: "\(p.coinsInserted) coins inserted but \(p.coinsNeeded) coins are needed",
-            suggestion: "Insert \(p.coinsNeeded - p.coinsInserted) more coins"))
-    } catch let error as VendingMachineError {
-        NXLogger.log(error: NSError(error, suggestion: "Try banging the machine"))
-    } catch {
-        NXLogger.log(error: error)
-    }
+do {
+    try buyBeer(3)
+} catch VendingMachineError.InsufficientFunds(let p) {
+    NXLogger.log(error: NSError(VendingMachineError.InsufficientFunds(p),
+        reason: "\(p.coinsInserted) coins inserted but \(p.coinsNeeded) coins are needed",
+        suggestion: "Insert \(p.coinsNeeded - p.coinsInserted) more coins"))
+} catch let error as VendingMachineError {
+    NXLogger.log(error: NSError(error, suggestion: "Try banging the machine"))
+} catch {
+    NXLogger.log(error: error)
+}
 ```
 
 The result will look something like this:
@@ -141,11 +141,11 @@ The result will look something like this:
 Especially in Objective C, where you are stuck with _NSError_, NXLogging's extension makes it more convenient creating _NSError_ instances:
 
 ```objectivec
-    NSError *err = [NSError errorWithCode: -2
-                              description: @"Unable to complete this operation"
-                                   reason: @"The request timed out"
-                               suggestion: @"Try again later"
-                          underlyingError: [NSError errorWithCode: -1 description: @"Time-out error"]];
+NSError *err = [NSError errorWithCode: -2
+                          description: @"Unable to complete this operation"
+                               reason: @"The request timed out"
+                           suggestion: @"Try again later"
+                      underlyingError: [NSError errorWithCode: -1 description: @"Time-out error"]];
 ```
 
 In most cases you don't have to deal with the _userInfo_ dictionary and if omitted, _NSError_ will use an error domain derived from the bundle identifier of your application. Logging the error above will result in log output similar to the one below (note how underlying errors are included recursively):
@@ -166,45 +166,45 @@ We don't want to encourage you to raise and catch exceptions all over your Objec
 In Objective C you can create and raise and catch exceptions like this:
 
 ```objectivec
-    - (void)badGuy {
-        [NSException raise:@"BadGuyException" format:@"Trouble is my middle name"];
-    }
+- (void)badGuy {
+    [NSException raise:@"BadGuyException" format:@"Trouble is my middle name"];
+}
 
-    - (void)handleBadGuy {
-        NSException *exception = [NSException probe:^{ [self badGuy]; }];
-    
-        [NSException raise:@"TooBadException" cause:exception format:@"Can't handle the %@", @"bad guy"];
-    }
+- (void)handleBadGuy {
+    NSException *exception = [NSException probe:^{ [self badGuy]; }];
+
+    [NSException raise:@"TooBadException" cause:exception format:@"Can't handle the %@", @"bad guy"];
+}
 ```
 
 And the equivalent in Swift:
 
 ```swift
-    func badGuy() {
-        NSException.raise("BadGuyException", format: "Trouble is my middle name")
-    }
+func badGuy() {
+    NSException.raise("BadGuyException", format: "Trouble is my middle name")
+}
 
-    func handleBadGuy() {
-        let exception = NSException.probe(badGuy)
+func handleBadGuy() {
+    let exception = NSException.probe(badGuy)
 
-        NSException.raise("TooBadException", cause: exception, format: "Can't handle the %@", "bad guy")
-    }
+    NSException.raise("TooBadException", cause: exception, format: "Can't handle the %@", "bad guy")
+}
 ```
 
 Now, if you log an exception in Objective C:
 
 ```objectivec
-    NSException *exception = [NSException probe:^{ [self handleBadGuy]; }]; // We could also do @try @catch here
+NSException *exception = [NSException probe:^{ [self handleBadGuy]; }]; // We could also do @try @catch here
 
-    NXLogException(NXLogLevelNotice, exception, @"Something sinister is going on");
+NXLogException(NXLogLevelNotice, exception, @"Something sinister is going on");
 ```
 
 or in Swift:
 
 ```swift
-    let exception = NSException.probe(handleBadGuy)
-        
-    NXLogger.log(.Notice, exception: exception, format: "Something sinister is going on")
+let exception = NSException.probe(handleBadGuy)
+    
+NXLogger.log(.Notice, exception: exception, format: "Something sinister is going on")
 ```
 
 you'll end up with log like this:
@@ -224,15 +224,15 @@ Log variables
 Let us assume, that you don't want every line in your logs to include a lot of information on the client's environment, which sometimes might be advisable for a production system (see [Customisation](Customisation.md) on how to achieve this). Let us also assume, that for some particular log messages you _do_ want to include some info. In such a case, you can make use of __log variables__:
 
 ```swift
-    NXLogger.log(.Warning, format: "This feature is not available in $(systemName) $(systemVersion).")
-    
-    NXLogger.log(.Error, format: "Sorry, this device ($(deviceModel)) does not make coffee.")
-    
-    // You can also put variables in the format arguments ...
-    NXLogger.log(.Info, format: "Application %@ started on %@ with process ID %@.", "$(processName)", "$(deviceName)", "$(processID)")
-    
-    // ... or even mix it like this
-    NXLogger.log(.Emergency, format: "HELP WANTED: Can some Swift expert fix function $(%@) in file $(%@)?", "function", "file")
+NXLogger.log(.Warning, format: "This feature is not available in $(systemName) $(systemVersion).")
+
+NXLogger.log(.Error, format: "Sorry, this device ($(deviceModel)) does not make coffee.")
+
+// You can also put variables in the format arguments ...
+NXLogger.log(.Info, format: "Application %@ started on %@ with process ID %@.", "$(processName)", "$(deviceName)", "$(processID)")
+
+// ... or even mix it like this
+NXLogger.log(.Emergency, format: "HELP WANTED: Can some Swift expert fix function $(%@) in file $(%@)?", "function", "file")
 ```
 
 The variables currently supported are:
